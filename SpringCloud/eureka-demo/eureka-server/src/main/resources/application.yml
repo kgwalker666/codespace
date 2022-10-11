@@ -1,0 +1,13 @@
+server:
+  # eureka服务监听的端口
+  port: 7000
+spring:
+  application:
+    # 该服务的名称，在注册中心，所有相同名称的服务会划分为一组，然后根据算法选择一套进行访问
+    name: eureka-server
+eureka:
+  client:
+    service-url:
+      # 由于在eureka看来，eureka服务端也是也是一个服务，因此也要注册到注册中心
+      # 客户端可以在配置文件中指定当前服务属于哪一个Zone，如果没有指定，则属于默认Zone
+      defaultZone: http://localhost:7000/eureka/
